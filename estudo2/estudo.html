@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My homepage</title>
+    <script src="js/jquery.js"></script>
+    <style>
+       h2 {
+           font-family: 'Lucida Sans', 'Lucida Console', 'Lucida Sans Unicode', sans-serif;
+           margin-left: 25%;
+       }
+
+        #campo-nome {
+            margin-left: 25%;
+            margin-top: 25%;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="campo-nome"/>
+    <input type="button" value="copiar" id="botao-copiar"/>
+
+    <h2 id="texto-copiado"></h2>
+    <script>
+
+        $('#botao-copiar').on('click', function(){
+            $('#texto-copiado').text($('#campo-nome').val());
+            $('#campo-nome').val("");
+        });
+
+
+    </script>
+</body>
+</html>

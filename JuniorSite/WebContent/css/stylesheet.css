@@ -1,0 +1,114 @@
+
+.unusual {
+    padding-top: 1.5%;
+}
+
+.nav.nav-pills > li > a {
+    border-radius: 0%;
+    font-size: 1.5em;
+    color: #FFF;
+    background-color: rgb(150, 28, 255);
+    border-right: 3px solid rgb(47, 47, 47);
+    border-left: 3px solid rgb(47, 47, 47);
+    transition: background-color, color 0.5s;
+}
+
+.nav.nav-pills > li > a:hover {
+    font-size: 1.5em;
+    color: #000;
+    background-color: rgb(182, 126, 255);
+    border-right: 3px solid rgba(39, 39, 39, 0.31);
+    border-left: 3px solid rgba(39, 39, 39, 0.31);
+    transition: background-color, color 0.5s;
+}
+
+.img-logo {
+    width: 75px;
+    height: 75px;
+    position: relative;
+    right: 10%;
+    bottom: 125%;
+    border-radius: 5px;
+	transition: background-color 0.5s;
+}
+
+.img-logo:hover {
+	background-color: rgb(150, 28, 255);
+	transition: background-color 0.5s;
+}
+
+.title-class {
+    padding-top: 15px;
+    border-bottom: 1px solid #8c8c8c;
+}
+
+#autor-dp {
+    text-align: center;
+}
+
+#autor-dp-img{
+    width: 200px;
+    height: 200px;
+}
+
+.default-div {
+    width: 205px;
+    height: 205px;
+    margin-left: 75px;
+    border: 2px solid mediumspringgreen;
+}
+
+.fonte-noticia {
+    color: rgba(255, 27, 17, 1);
+}
+
+.label-paragraph {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+p > strong {
+    color: rebeccapurple;
+}
+
+.label {
+    font-size: 1em;
+    font-weight: 100;
+    transition: background-color 0.5s;
+}
+
+.label:hover {
+    transition: background-color 0.5s;
+    cursor:pointer;
+}
+
+.label-success:hover {
+    background-color: rgb(159, 213, 159);
+}
+
+.label-warning:hover {
+    background-color: rgb(243, 191, 120);
+}
+
+.label-danger:hover {
+    background-color: rgb(227, 132, 130);
+}
+
+.th-align {
+    text-align: center;
+}
+
+.td-align {
+    text-align: center;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.alerta {
+	color: #F00004;
+	margin-left: 15%;
+}
+
+

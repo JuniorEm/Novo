@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar novo contato</title>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/maskedinput.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+    <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet"/>
+</head>
+<body class="unusual">
+
+    <div class="container">
+        <a class="navbar-brand" href="template.html">
+            <img alt="JLogo" src="img/jlogo.png" class="img-logo">
+        </a>
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="template.html">Início</a></li>
+            <li role="presentation"><a href="sobre.html">Sobre</a></li>
+            <li role="presentation"><a href="adiciona-contato.html">Adicionar Contatos</a></li>
+            <li role="presentation"><a href="lista-contato.html">Listar Contatos</a></li>
+        </ul>
+
+        <header class="page-header title-class">
+            <h2>Contato</h2>
+        </header>
+        <div class="row">
+            <div role="main" class="col-md-8">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="inputImage">Imagem</label>
+                        <input type="file" accept="image" id="inputImage"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Nome</label>
+                        <input type="text" class="form-control" id="inputName"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" class="form-control" id="inputEmail"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTelefone">Telefone</label>
+                        <input type="text" class="form-control" id="inputTelefone"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputData">Data de Nascimento</label>
+                        <input type="text" class="form-control" id="inputData" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputApresentacao">Texto de Apresentação</label>
+                        <textarea id="inputApresentacao" class="form-control" rows="10"></textarea>
+                    </div>
+                    <script>
+                        jQuery(function() {
+                            $('#inputTelefone').mask('(99) 9999-9999');
+                            $('#inputData').mask('99/99/9999');
+
+                            $('#inputData').datepicker({dateFormat: 'dd/mm/yy'});
+                        });
+                    </script>
+                    <input type="submit" class="btn btn-default" value="Adicionar"/>
+                </form>
+            </div>
+
+            <aside role="complementary" class="col-md-4">
+                <div id="widget-about" class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Informações</h4>
+                        <p>Por aqui vocês poderão ver links de aprendizado realizados diretamente por mim.
+                            Abordarei assuntos como Design Patterns, tecnologias novas no mercado. Pretendo crescer
+                            cada vez mais.</p>
+                    </div>
+                </div>
+                <div id="widget-links" class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Links</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Github</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <hr/>
+        <footer>
+            <p class="text-muted">&copy; 2016 - Ailton Junior</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

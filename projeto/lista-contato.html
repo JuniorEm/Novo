@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listando contatos</title>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/maskedinput.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+    <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet"/>
+</head>
+<body class="unusual">
+    <div class="container">
+        <a class="navbar-brand" href="template.html">
+            <img alt="JLogo" src="img/jlogo.png" class="img-logo">
+        </a>
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="template.html">Início</a></li>
+            <li role="presentation"><a href="sobre.html">Sobre</a></li>
+            <li role="presentation"><a href="adiciona-contato.html">Adicionar Contatos</a></li>
+            <li role="presentation"><a href="#">Listar Contatos</a></li>
+        </ul>
+
+        <header class="page-header title-class">
+            <h2>Visualizar dados de contatos</h2>
+        </header>
+
+        <div class="row">
+            <table class="table position">
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Data de Nascimento</th>
+                    <th class="th-align">Opções</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ailton Aparecido Bezerra Junior</td>
+                    <td>ajunior.em@gmail.com</td>
+                    <td>(11) 3906-7433</td>
+                    <td>05/06/1996</td>
+                    <td class="td-align">
+                        <span class="label label-success">Visualizar</span>
+                        <span class="label label-warning">Editar</span>
+                        <span class="label label-danger">Excluir</span>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <hr/>
+        <footer>
+            <p class="text-muted">&copy; 2016 - Ailton Junior</p>
+        </footer>
+    </div>
+</body>
+</html>

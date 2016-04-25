@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css"/>
+</head>
+<body class="container">
+<h2 style="font-family: 'Lucida Sans', 'Lucida Console', 'Lucida Sans Unicode', sans-serif" id="texto-copiado"></h2>
+<input type="text" id="caixa-texto"/><br/>
+<input type="button" id="botao-copiar" value="Copiar"/>
+<script>
+    /*
+  $('#botao-copiar').click(function() {
+        var campo = $('#caixa-texto');
+        $('#texto-copiado').text(campo.val());
+        campo.val("");
+        campo.focus();
+    }); */
+
+    $('#caixa-texto').blur(function() {
+       var campo = $(this);
+        $('#texto-copiado').text(campo.val());
+        campo.val("");
+    });
+
+</script>
+
+
+</body>
+</html>

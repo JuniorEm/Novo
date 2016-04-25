@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício2</title>
+</head>
+<body>
+<table border="1" id="tabela">
+    <tr>
+        <th>Ano</th>
+        <th>É monstro?</th>
+        <th>Nome</th>
+        <th>Filme de aparição</th>
+    </tr>
+    <tr>
+        <td>2003</td>
+        <td>Sim</td>
+        <td>Unknown</td>
+        <td>Olhos Famintos</td>
+        <td><a class="remove-item" href="">Remover</a></td>
+    </tr>
+    <tr>
+        <td>1988</td>
+        <td>Sim</td>
+        <td>Jason Vorhees</td>
+        <td>Sexta Feira 13</td>
+        <td><a class="remove-item" href="">Remover</a></td>
+    </tr>
+    <tr>
+        <td>1986</td>
+        <td>Sim</td>
+        <td>Freddy Kruegger</td>
+        <td>A hora do pesadelo</td>
+        <td><a class="remove-item" href="">Remover</a></td>
+    </tr>
+    <tr>
+        <td>2004</td>
+        <td>Não</td>
+        <td>JigSaw as known as John Kramer</td>
+        <td>SAW</td>
+        <td><a class="remove-item" href="">Remover</a></td>
+    </tr>
+</table>
+<br/>
+<br/>
+<label for="campo-ano">Ano</label>
+<input type="text" id="campo-ano"/><br/>
+<br/>
+<label for="radio_sim">É monstro?</label>
+<input type="radio" name="campo-radio1" id="radio_sim" value="Sim" checked/>Sim
+<input type="radio" name="campo-radio1" id="radio_nao" value="Não"/>Não
+<br/>
+
+<label for="campo-nome">Nome</label>
+<input type="text" id="campo-nome"/><br/>
+<br/>
+<label for="campo-filme">Filme</label>
+<input type="text" id="campo-filme"/><br/>
+<br/>
+
+<input type="button" value="Adicionar" id="btn-adicionar" onclick="obtemValores()"/>
+
+<script src="js/jquery-2.2.3.min.js"></script>
+<script>
+    /*
+    var temPosicoesVazias = function (array) {
+        var cont = 0;
+
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] === "") {
+                cont++;
+            }
+        }
+        return cont > 0; //Se o cont for menor ou igual ao total do array, significa que temos todos os elementos nulos
+    };
+    */
+    var verificaValor = function() {
+        if ($("#radio_sim").is(":checked"))
+            return "Sim";
+        return "Não";
+    };
+
+    var obtemValores = function () {
+        //var array = $("#campo-adicionar").val().split(" ");
+        var tr = $("<tr>");
+        var cols = "";
+        /*
+        cols += "<td>" + array[0] + "</td>";
+        cols += "<td>" + array[1] + "</td>";
+        cols += "<td>" + array[2] + "</td>";
+        cols += "<td>" + array[3] + "</td>";
+        cols += "<td>" + "<a class='remove-item' href=''>Remover</a>" + "</td>";
+
+        if (!temPosicoesVazias(array)) { //Se o campo não for vazio, coloque na tabela
+            tr.append(cols);
+            $("#tabela").append(tr);
+        } else alert("Preencha os campos corretamente!");
+         */
+
+        cols += "<td>" + $("#campo-ano").val() + "</td>";
+        cols += "<td>" + verificaValor() + "</td>";
+        cols += "<td>" + $("#campo-nome").val() + "</td>";
+        cols += "<td>" + $("#campo-filme").val() + "</td>";
+        cols += "<td>" + "<a class='remove-item' href=''>Remover</a>" + "</td>";
+
+        tr.append(cols);
+        $("#tabela").append(tr);
+
+    };
+
+    var removeItem = function (event) {
+        event.preventDefault();
+        $(this).closest("tr").remove();
+    };
+
+    var principal = function () {
+        $(".remove-item").click(removeItem);
+    };
+
+    $(principal);
+</script>
+</body>
+</html>

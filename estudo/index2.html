@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript puro</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <input type="text" id="txtBoxOne" />
+    <input type="text" id="txtBoxTwo" />
+    <input type="button" value="Testar" onclick="multiplicaPorTrinta()"/>
+
+<script>
+    function soma() {
+        var valor1 = parseFloat($('#txtBoxOne').val());
+        var valor2 = parseFloat($('#txtBoxTwo').val());
+        return valor1 + valor2;
+    }
+
+    function multiplicaPorTrinta() {
+        var oldValue = soma();
+        var value = oldValue * 30;
+        window.alert("O resultado é: " + value);
+    }
+
+</script>
+
+</body>
+</html>

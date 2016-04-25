@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+    padding: auto;
+}
+
+.img-padrao {
+    width: 200px;
+    height: 200px;
+    left: 50%;
+}
+
+#img-javaee {
+    width: 8.5%;
+    height: 8.5%;
+}

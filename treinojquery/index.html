@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Treino</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<h2>Lista de Nomes</h2>
+<ul id="lista">
+    <li>Ailton Aparecido</li>
+</ul>
+<input type="button" id="btnAdiciona" value="Adicionar"/>
+<input type="text" id="txtNome"/>
+<script>
+    $('#btnAdiciona').click(function () {
+        var texto = $('#txtNome').val();
+        var list = "";
+        list += '<li>' + texto + ' <input type="button" id="btnRemove" value="Remover" onclick="testando(this)"/>' + '</li>';
+
+        $('#lista').prepend(list);
+    });
+
+    /*
+    (function($) {
+        removeList = function(arg) {
+            var li = $(arg).closest('li');
+            li.remove();
+        }
+    }(jQuery)); */
+
+    /*
+    $('#btnRemove').click(function() {
+        alert('oi');
+        var li = $(this).closest('li');
+        li.remove();
+    }); */
+
+    (function($) {
+        testando = function(t) {
+            var li = $(t).closest('li');
+            li.remove();
+        }
+    })(jQuery);
+</script>
+
+</body>
+</html>

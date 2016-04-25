@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício1</title>
+</head>
+<body>
+<label for="campo-palavra">Palavra</label>
+<input type="text" id="campo-palavra"/>
+<input type="button" value="Copiar" id="btn-copiar" onclick="copiaTexto()"/>
+<br/>
+<br/>
+<label for="campo-copia">Texto Copiado</label>
+<input type="text" id="campo-copia" disabled/>
+
+
+<script src="js/jquery-2.2.3.min.js"></script>
+<script>
+    /** Maneira 1
+     $("#btn-copiar").on("click", function() {
+            var texto = $("#campo-palavra").val();
+            $("#campo-copia").val(texto);
+        });
+     **/
+
+    /** Maneira 2
+     var copiaTexto = function() {
+        var texto = $("#campo-palavra").val();
+        $("#campo-copia").val(texto);
+    };
+     **/
+
+    var copiaTexto = function () {
+        var texto = $("#campo-palavra").val();
+        $("#campo-copia").val(texto);
+        $(limpar);
+    };
+
+    var limpar = function () {
+        $("#campo-palavra").val("");
+    };
+
+</script>
+</body>
+</html>

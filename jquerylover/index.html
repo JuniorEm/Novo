@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>JQuery Lovers</title>
+</head>
+<body>
+    <header class="page-header">
+        <h1>Utilizando JQuery!</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row col-md-8" role="main">
+            <h2>Lista</h2>
+            <ul class="list-group" id="lista">
+                <li class="list-group-item">JQuery Lover 1</li>
+                <li class="list-group-item">JQuery Lover 2</li>
+            </ul>
+        </div>
+
+        <aside role="complementary" class="col-md-4">
+            <h3>Adicionar</h3>
+            <label for="input-item">Item</label>
+            <input type="text" id="input-item" disabled/>
+            <input type="button" value="Adicionar" id="botao-adicionar"/>
+            <input type="button" value="Habilitar" id="botao-habilitar"/>
+
+            <script>
+                $("#botao-adicionar").click(function() {
+                    var texto = $('#input-item').val();
+                    var isDisabled =$('#input-item').prop('disabled');
+                    var listItem = $('<li>').addClass('list-group-item');
+                    if (!isDisabled) { //se não está desabilitado,
+                        //listItem.addClass('list-group-item');
+                        listItem.fadeIn(200);
+                        listItem.text(texto).appendTo('#lista');
+                        $('#input-item').val("");
+                    } else {
+                        alert("Habilite o campo!");
+                    }
+
+                });
+
+                $('#botao-habilitar').click(function() {
+                        $('#input-item').prop('disabled', false);
+
+                });
+
+            </script>
+        </aside>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>JQuery Lovers 2</title>
+</head>
+<body>
+    <table class="table-responsive" id="tabela">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monique Santos Martins</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="text" id="txtAdicionaNome"/>
+    <input type="text" id="txtAdicionaIdade"/>
+    <input type="button" value="Adicionar" id="btn-adiciona" class="button-custom"/>
+
+    <script>
+        $('#btn-adiciona').click(function(){
+            var tableRow = $('<tr>'); //Cria um novo tr
+            var tableColumn = ""; //Cria um novo td
+
+            tableColumn += '<td>' + $('#txtAdicionaNome').val() + '</td>' //td recebe o valor do input
+            tableColumn += '<td> ' + $('#txtAdicionaIdade').val() + '</td>';
+
+            tableRow.append(tableColumn); //append nos dois
+            $('#tabela').append(tableRow);
+        });
+    </script>
+</body>
+</html>

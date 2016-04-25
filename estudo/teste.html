@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link href="css/jquery.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/maskedinput.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+    <label for ="telefone">Telefone</label>
+    <input type="text" id="telefone" /><br/>
+    <label for ="celular">Celular</label>
+    <input type="text" id="celular" /><br/>
+    <label for ="cep">CEP</label>
+    <input type="text" id="cep" /><br/>
+    <label for ="data">Data</label>
+    <input type="text" id="data" /><br/>
+    <input type="button" value="Testar" onclick="jQuery()"/>
+    <input type="date" name="date" />
+
+    <script>
+        $('#telefone').mask('(99) 9999-9999');
+        $('#celular').mask('(99) 99999-9999');
+        $('#cep').mask('99999-999');
+
+            $('#data').datepicker({dateFormat: 'dd/mm/yy',
+                dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+                dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+                dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+                monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']});
+
+        function jQuery() {
+            var message = "Seu telefone é: ";
+            alert(message + $('#telefone').val());
+        }
+
+
+    </script>
+</body>
+</html>

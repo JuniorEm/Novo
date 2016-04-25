@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vendo Ajax</title>
+    <script src="js/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+</head>
+<body>
+<ul id="lista">
+    <li>Aprendendo Java</li>
+    <li>Aprendendo JavaScript</li>
+    <li>Aprendendo Ruby</li>
+    <li>Aprendendo HTML e CSS</li>
+</ul>
+<h2>Treinamento</h2>
+<input type="button" id="botao-atualiza" value="Atualizar"/>
+<label for="caixa-texto">Exemplo</label>
+<input type="text" id="caixa-texto"/>
+<input type="button" value="Adicionar" id="botao-adicionar"/>
+<script>
+    /*
+     $('#lista').on("click", "li", function() { //Delegação -> Quem responderá o
+     // elemento será a lista, mas levando em consideração o elemento clicado
+     var texto = $(this).text();
+     alert(texto);
+     });
+     */
+
+    $('#lista').on("dblclick", "li", function() {
+        $(this).animate({'margin-left' : "+=100", 'margin-right' : '+=50'}, 500, function() {
+            $(this).remove();
+        });
+    });
+
+
+    $('#botao-adicionar').click(function() {
+        var texto = $('#caixa-texto');
+        if ((texto.val() != "") && (texto.val() != " ")) {
+            $('<li>').text(texto.val()).css({'color': 'blue', 'background-color': 'lightgrey'}).appendTo('#lista');
+            texto.val("");
+            texto.focus();
+        } else {
+            alert("O campo necessita de preenchimento!");
+            texto.focus();
+        }
+    });
+    /*
+    $('#botao-atualiza').click(function() {
+        $.ajax({
+            url: 'http://mirrorfashion.caelum.com.br/treinamentos',
+            dataType: 'jsonp',
+            success: function(retorno) { //O retorno significa que é o retorno do que a url nos forneceu
+                $.each(retorno.treinamentos, function() {
+                    var treinamento = this;
+                    $('<li>').text(treinamento.nome).css({'color': 'yellow', 'background-color': 'red'}).appendTo('#lista');
+                });
+            }
+
+        });
+    });
+    */
+
+    $('#botao-atualiza').click(function() {
+        $.get('http://mirrorfashion.caelum.com.br/treinamentos', function(retorno) {
+            $.each(retorno.treinamentos, function() {
+                var treinamento = this;
+                $('<li>').css({'color' : 'green'}).text(treinamento.nome).appendTo('#lista');
+            });
+        }, 'jsonp');
+    });
+
+
+
+</script>
+</body>
+</html>
